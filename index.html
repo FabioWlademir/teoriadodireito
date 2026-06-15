@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>Teoria do Direito | Grupo de Pesquisa CNPq – UNISINOS</title>
+  <!-- Google Fonts + Font Awesome -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #ffffff;  /* fundo branco conforme logo */
+      color: #1e2a36;
+      line-height: 1.5;
+      scroll-behavior: smooth;
+    }
+
+    /* Cores extraídas do logo (bordas e detalhes) */
+    :root {
+      --rosa: #E83F6F;
+      --verde: #2DAA7E;
+      --vermelho: #DC2F2F;
+      --azul: #2C7DA0;
+      --amarelo: #F9C74F;
+      --preto: #1F2937;
+      --cinza-claro: #F8F9FA;
+      --cinza-borda: #EAECEE;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 32px;
+    }
+
+    /* Header com fundo branco e borda colorida (rosa/verde) */
+    .site-header {
+      background-color: #ffffff;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+      border-bottom: 3px solid transparent;
+      border-image: linear-gradient(90deg, var(--rosa), var(--verde), var(--amarelo), var(--azul)) 1;
+      border-image-slice: 1;
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      padding: 16px 0;
+    }
+
+    .logo img {
+      height: 65px;
+      width: auto;
+      max-width: 220px;
+      object-fit: contain;
+    }
+
+    /* fallback caso imagem não carregue */
+    .logo span {
+      display: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 36px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 1rem;
+      color: var(--preto);
+      transition: 0.2s;
+      padding: 6px 0;
+      border-bottom: 2px solid transparent;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--rosa);
+      border-bottom-color: var(--rosa);
+    }
+
+    /* mobile menu */
+    .menu-toggle {
+      display: none;
+      font-size: 1.7rem;
+      color: var(--preto);
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    /* Hero com fundo branco e detalhes coloridos */
+    .hero {
+      background: linear-gradient(135deg, #ffffff 0%, #FEF9F0 100%);
+      color: var(--preto);
+      padding: 80px 0 90px;
+      text-align: center;
+      border-bottom: 1px solid var(--cinza-borda);
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      font-family: 'Cormorant Garamond', serif;
+      margin-bottom: 20px;
+    }
+
+    .hero .highlight {
+      color: var(--rosa);
+      border-bottom: 3px solid var(--amarelo);
+      display: inline-block;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 720px;
+      margin: 0 auto 24px;
+      color: #2c3e4e;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      background: rgba(232, 63, 111, 0.1);
+      padding: 6px 18px;
+      border-radius: 60px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--rosa);
+      border: 1px solid rgba(232, 63, 111, 0.3);
+    }
+
+    /* seções */
+    .section {
+      padding: 80px 0;
+    }
+
+    .section-alt {
+      background-color: var(--cinza-claro);
+    }
+
+    .section-title {
+      font-size: 2.2rem;
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 600;
+      margin-bottom: 48px;
+      position: relative;
+      display: inline-block;
+      color: var(--preto);
+    }
+
+    .section-title:after {
+      content: '';
+      display: block;
+      width: 70px;
+      height: 3px;
+      background: linear-gradient(90deg, var(--rosa), var(--verde));
+      margin-top: 12px;
+      border-radius: 3px;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 48px;
+      align-items: start;
+    }
+
+    .about-card {
+      background: white;
+      border-radius: 28px;
+      padding: 32px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+      border: 1px solid var(--cinza-borda);
+      transition: 0.2s;
+    }
+
+    .about-card:hover {
+      border-color: var(--verde);
+    }
+
+    .coordinator {
+      display: flex;
+      gap: 24px;
+      align-items: center;
+      margin: 28px 0 20px;
+      background: #FEF6F0;
+      border-radius: 60px;
+      padding: 12px 24px;
+    }
+
+    .coordinator i {
+      font-size: 2.6rem;
+      color: var(--azul);
+    }
+
+    .research-lines span {
+      display: inline-block;
+      background: #f0f2f5;
+      padding: 6px 16px;
+      border-radius: 40px;
+      margin: 6px 8px 6px 0;
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--preto);
+    }
+
+    .linkr-box {
+      margin-top: 24px;
+      background: linear-gradient(95deg, #fff6e8, #fff);
+      border-radius: 32px;
+      padding: 16px 20px;
+      border-left: 6px solid var(--amarelo);
+    }
+
+    /* cards de artigos com bordas coloridas */
+    .posts-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 32px;
+    }
+
+    .post-card {
+      background: white;
+      border-radius: 28px;
+      overflow: hidden;
+      transition: all 0.25s ease;
+      box-shadow: 0 8px 22px rgba(0, 0, 0, 0.04);
+      border: 1px solid var(--cinza-borda);
+    }
+
+    .post-card:hover {
+      transform: translateY(-6px);
+      border-color: var(--rosa);
+      box-shadow: 0 20px 30px -12px rgba(0, 0, 0, 0.1);
+    }
+
+    .card-img {
+      height: 170px;
+      background: linear-gradient(125deg, #f8e3e8, #e0f2e9);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3rem;
+      color: var(--azul);
+    }
+
+    .card-content {
+      padding: 28px 24px 32px;
+    }
+
+    .card-category {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      font-weight: 700;
+      letter-spacing: 1px;
+      color: var(--verde);
+    }
+
+    .card-content h3 {
+      font-size: 1.4rem;
+      margin: 12px 0;
+      font-weight: 600;
+    }
+
+    .btn-outline {
+      display: inline-block;
+      margin-top: 16px;
+      text-decoration: none;
+      font-weight: 600;
+      color: var(--preto);
+      border-bottom: 2px solid var(--amarelo);
+      padding-bottom: 4px;
+      transition: 0.2s;
+    }
+
+    .btn-outline:hover {
+      color: var(--rosa);
+      border-bottom-color: var(--rosa);
+    }
+
+    /* contato */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+    }
+
+    .contact-info-box {
+      background: white;
+      border-radius: 28px;
+      padding: 32px;
+      box-shadow: 0 8px 22px rgba(0, 0, 0, 0.03);
+      border: 1px solid var(--cinza-borda);
+    }
+
+    .contact-info-box p {
+      margin-bottom: 24px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      font-size: 1rem;
+    }
+
+    .contact-info-box i {
+      width: 32px;
+      font-size: 1.4rem;
+      color: var(--azul);
+    }
+
+    .btn-primary {
+      background: var(--preto);
+      color: white;
+      border: none;
+      padding: 12px 34px;
+      border-radius: 60px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .btn-primary:hover {
+      background: var(--rosa);
+      color: white;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 14px 20px;
+      margin-bottom: 20px;
+      border: 1px solid var(--cinza-borda);
+      border-radius: 48px;
+      font-family: inherit;
+      transition: 0.2s;
+    }
+
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      outline: none;
+      border-color: var(--verde);
+      box-shadow: 0 0 0 3px rgba(45, 170, 126, 0.2);
+    }
+
+    footer {
+      background: #1a2a36;
+      color: #cddfe7;
+      padding: 56px 0 30px;
+      margin-top: 20px;
+    }
+
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 32px;
+      margin-bottom: 40px;
+    }
+
+    .social-links a {
+      color: #e0e6f0;
+      margin-right: 28px;
+      font-size: 1.5rem;
+      transition: 0.2s;
+    }
+
+    .social-links a:hover {
+      color: var(--amarelo);
+    }
+
+    .copyright {
+      text-align: center;
+      font-size: 0.85rem;
+      border-top: 1px solid #2f495e;
+      padding-top: 30px;
+    }
+
+    @media (max-width: 880px) {
+      .container {
+        padding: 0 24px;
+      }
+      .grid-2, .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 36px;
+      }
+      .nav-links {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        background: white;
+        padding: 24px 0;
+        gap: 20px;
+        margin-top: 16px;
+        border-radius: 28px;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+      }
+      .nav-links.show {
+        display: flex;
+      }
+      .menu-toggle {
+        display: block;
+      }
+      .hero h1 {
+        font-size: 2.2rem;
+      }
+      .logo img {
+        height: 50px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="logo">
+        <img src="logo.jpg" alt="Teoria do Direito - Logo colorida" onerror="this.style.display='none'; this.nextSibling.style.display='block'">
+        <span style="display:none; font-weight:700;">TEORIA DO DIREITO</span>
+      </div>
+      <button class="menu-toggle" id="mobileMenuBtn"><i class="fas fa-bars"></i></button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#inicio" class="nav-link active">Início</a></li>
+        <li><a href="#sobre" class="nav-link">Sobre</a></li>
+        <li><a href="#artigos" class="nav-link">Artigos</a></li>
+        <li><a href="#contato" class="nav-link">Contato</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+    <section id="inicio" class="hero">
+      <div class="container">
+        <div class="hero-badge"><i class="fas fa-flask"></i> Grupo de Pesquisa certificado pelo CNPq</div>
+        <h1>Teoria do Direito: <br> <span class="highlight">pesquisa crítica</span> e inovação epistêmica</h1>
+        <p>Fundamentos, transformações e desafios do direito na sociedade complexa. Liderado pelo Prof. Dr. Leonel Severo Rocha.</p>
+        <a href="#sobre" style="display: inline-block; margin-top: 24px; background: var(--preto); color: white; padding: 12px 28px; border-radius: 60px; font-weight: 500; text-decoration: none;">Conheça o grupo <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </section>
+
+    <section id="sobre" class="section">
+      <div class="container">
+        <h2 class="section-title">Sobre o Grupo de Pesquisa</h2>
+        <div class="grid-2">
+          <div class="about-card">
+            <i class="fas fa-gavel" style="font-size: 2rem; color: var(--vermelho); margin-bottom: 12px; display: inline-block;"></i>
+            <h3 style="margin-bottom: 16px;">Quem somos</h3>
+            <p>O <strong>Grupo de Pesquisa Teoria do Direito (CNPq)</strong>, sediado no <strong>PPGDireito da UNISINOS (RS)</strong>, reúne pesquisadores, mestres e doutorandos comprometidos com o avanço da reflexão teórico-jurídica. Atuamos na intersecção entre Filosofia do Direito, Teoria dos Sistemas Sociais e Hermenêutica Contemporânea.</p>
+            <p>Nosso propósito é produzir conhecimento crítico e instrumental para entender a decisão judicial, a complexidade normativa e o papel do direito nas democracias latino-americanas.</p>
+            <div class="research-lines">
+              <strong>🧠 Linhas de pesquisa atuais:</strong>
+              <div style="margin-top: 12px;">
+                <span>Teoria dos sistemas sociais</span>
+                <span>Direito e decisão</span>
+                <span>Epistemologia jurídica</span>
+                <span>Direito, tecnologia e riscos</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="about-card">
+            <i class="fas fa-chalkboard-user" style="font-size: 2rem; color: var(--azul); margin-bottom: 12px;"></i>
+            <h3 style="margin-bottom: 8px;">Coordenação</h3>
+            <div class="coordinator">
+              <i class="fas fa-user-graduate"></i>
+              <div>
+                <strong>Prof. Dr. Leonel Severo Rocha</strong><br>
+                <span style="font-size: 0.85rem;">Pós-doutor (Humboldt) • Líder do grupo no Diretório CNPq</span>
+              </div>
+            </div>
+            <p>Referência nacional em Teoria do Direito e Sociologia Jurídica. Integra o PPGD/UNISINOS e orienta pesquisas sobre hermenêutica sistêmica e constitucionalismo. </p>
+            <div class="linkr-box">
+              <i class="fas fa-link" style="color: var(--rosa);"></i> <strong>linkr.bio/leonelseverorocha</strong><br>
+              <span style="font-size: 0.85rem;">Acesse publicações, currículo e projetos</span>
+            </div>
+            <div style="margin-top: 20px; background: #f5f7fb; border-radius: 28px; padding: 14px;">
+              <i class="fab fa-instagram"></i> Instagram acadêmico: <strong>@lsr92338</strong> • <strong>@theoriadodireito</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="artigos" class="section section-alt">
+      <div class="container">
+        <h2 class="section-title">Produção acadêmica & Artigos</h2>
+        <div class="posts-grid" id="articlesGrid"></div>
+        <div style="text-align: center; margin-top: 48px;">
+          <a href="#" class="btn-primary" style="background: var(--verde); color: white;">Acessar repositório completo →</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="contato" class="section">
+      <div class="container">
+        <h2 class="section-title">Contato</h2>
+        <div class="contact-grid">
+          <div class="contact-info-box">
+            <p><i class="fab fa-instagram"></i> <strong>@theoriadodireito</strong> – Siga nossas atualizações</p>
+            <p><i class="fab fa-instagram"></i> Coordenador: <strong>@lsr92338</strong></p>
+            <p><i class="fas fa-envelope"></i> teoria.direito@unisinos.br</p>
+            <p><i class="fas fa-map-marker-alt"></i> Programa de Pós-Graduação em Direito – UNISINOS<br>Avenida Unisinos, 950 – São Leopoldo/RS</p>
+            <p><i class="fas fa-globe"></i> Diretório CNPq: <a href="#" style="color: var(--azul);">dgp.cnpq.br/teoriadodireito</a></p>
+            <div style="margin-top: 28px; background: #fef3e8; border-radius: 28px; padding: 20px;">
+              <i class="fas fa-microphone-alt"></i> Reuniões quinzenais abertas para pesquisadores convidados.
+            </div>
+          </div>
+          <div class="contact-form">
+            <form id="demoForm">
+              <input type="text" placeholder="Nome completo" required>
+              <input type="email" placeholder="E-mail institucional" required>
+              <textarea rows="4" placeholder="Mensagem / proposta de colaboração"></textarea>
+              <button type="submit" class="btn-primary">Enviar mensagem <i class="fas fa-paper-plane"></i></button>
+            </form>
+            <p class="form-note" style="font-size: 0.75rem; margin-top: 12px; color: #5d6f7e;">*Resposta em até 3 dias úteis.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div>
+          <h3 style="color: #f2c94c; font-family: 'Cormorant Garamond', serif;">Teoria do Direito</h3>
+          <p>Grupo de Pesquisa CNPq – UNISINOS/RS</p>
+        </div>
+        <div class="social-links">
+          <a href="https://www.instagram.com/theoriadodireito/" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="https://linkr.bio/leonelseverorocha" target="_blank"><i class="fas fa-link"></i></a>
+          <a href="#"><i class="fab fa-researchgate"></i></a>
+        </div>
+      </div>
+      <div class="copyright">
+        &copy; 2026 Grupo de Pesquisa Teoria do Direito (CNPq) · PPGDireito UNISINOS · Desenvolvido para @theoriadodireito
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Artigos baseados nas linhas de pesquisa do grupo
+    const articlesData = [
+      {
+        category: "TEORIA DOS SISTEMAS",
+        title: "Direito como sistema autopoiético: acoplamentos estruturais e paradoxos",
+        summary: "Análise a partir de Niklas Luhmann e sua recepção crítica no Brasil. Prof. Leonel Rocha."
+      },
+      {
+        category: "HERMENÊUTICA JURÍDICA",
+        title: "Decisão judicial, discricionariedade e argumentação sistêmica",
+        summary: "Limites da interpretação na pós-modernidade e a Teoria do Direito como observação."
+      },
+      {
+        category: "DIREITO E TECNOLOGIA",
+        title: "Governança algorítmica, proteção de dados e riscos sistêmicos",
+        summary: "Pesquisa interinstitucional sobre regulação de IA e os desafios à teoria jurídica."
+      },
+      {
+        category: "EPISTEMOLOGIA",
+        title: "O realismo jurídico e a virada pragmática: contribuições contemporâneas",
+        summary: "Publicado na Revista Brasileira de Filosofia do Direito (Qualis A)."
+      }
+    ];
+
+    const container = document.getElementById('articlesGrid');
+    if (container) {
+      container.innerHTML = '';
+      articlesData.forEach(art => {
+        const card = document.createElement('div');
+        card.className = 'post-card';
+        card.innerHTML = `
+          <div class="card-img">
+            <i class="fas fa-scale-balanced"></i>
+          </div>
+          <div class="card-content">
+            <div class="card-category">${art.category}</div>
+            <h3>${art.title}</h3>
+            <p>${art.summary}</p>
+            <a href="#" class="btn-outline">Ler resumo expandido <i class="fas fa-chevron-right"></i></a>
+          </div>
+        `;
+        container.appendChild(card);
+      });
+    }
+
+    // Mobile menu toggle
+    const menuBtn = document.getElementById('mobileMenuBtn');
+    const nav = document.getElementById('navLinks');
+    if (menuBtn && nav) {
+      menuBtn.addEventListener('click', () => nav.classList.toggle('show'));
+      document.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', () => nav.classList.remove('show'));
+      });
+    }
+
+    // Active link on scroll
+    const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('.nav-link');
+    function updateActive() {
+      let current = '';
+      sections.forEach(section => {
+        const top = section.offsetTop - 120;
+        if (scrollY >= top) current = section.getAttribute('id');
+      });
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === `#${current}`) link.classList.add('active');
+      });
+    }
+    window.addEventListener('scroll', updateActive);
+    updateActive();
+
+    // Form
+    const form = document.getElementById('demoForm');
+    if (form) {
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        alert('✅ Mensagem enviada ao grupo de pesquisa da UNISINOS. Agradecemos o contato!');
+        form.reset();
+      });
+    }
+  </script>
+</body>
+</html>
