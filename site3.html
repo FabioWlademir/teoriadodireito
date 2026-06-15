@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Teoria do Direito • Conteúdo jurídico para concursos e OAB</title>
+    <!-- Font Awesome Icons (v6 free) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Google Fonts: Montserrat + Open Sans -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #fefcf8;
+            color: #1a2a3f;
+            line-height: 1.5;
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 32px;
+        }
+
+        /* header / nav */
+        .site-header {
+            background-color: #0a1a2e;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(2px);
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            padding: 20px 0;
+        }
+
+        .logo a {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            letter-spacing: -0.3px;
+            text-decoration: none;
+            background: linear-gradient(135deg, #ffffff 0%, #cfddee 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .logo span {
+            font-weight: 500;
+            font-size: 1rem;
+            background: none;
+            -webkit-background-clip: unset;
+            background-clip: unset;
+            color: #9bb5d4;
+            display: inline-block;
+            margin-left: 5px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1rem;
+            color: #eef4ff;
+            transition: 0.2s;
+            padding: 6px 0;
+            border-bottom: 2px solid transparent;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: #f9c74f;
+            border-bottom-color: #f9c74f;
+        }
+
+        /* mobile toggle */
+        .menu-toggle {
+            display: none;
+            font-size: 1.7rem;
+            color: #fff;
+            cursor: pointer;
+            background: none;
+            border: none;
+        }
+
+        /* hero genérico */
+        .hero {
+            background: linear-gradient(105deg, #102b3f 0%, #1b3a4e 100%);
+            color: white;
+            padding: 70px 0 80px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3.2rem;
+            font-weight: 700;
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+
+        /* seção institucional */
+        .section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            font-size: 2.1rem;
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            margin-bottom: 48px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background: #f9c74f;
+            margin-top: 10px;
+            border-radius: 3px;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 48px;
+            align-items: center;
+        }
+
+        .about-text p {
+            margin-bottom: 20px;
+            font-size: 1.05rem;
+            color: #2c3e4e;
+        }
+
+        .highlight-stats {
+            background: #f0f4f9;
+            border-radius: 32px;
+            padding: 30px;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            text-align: center;
+            gap: 20px;
+        }
+
+        .stat-item h3 {
+            font-size: 2rem;
+            font-weight: 800;
+            color: #0f2b3b;
+        }
+
+        /* cards artigos */
+        .posts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 32px;
+            margin-top: 20px;
+        }
+
+        .post-card {
+            background: white;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 12px 28px rgba(0,0,0,0.05);
+            transition: transform 0.2s ease, box-shadow 0.2s;
+            border: 1px solid #e9eef3;
+        }
+
+        .post-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 30px -12px rgba(0,0,0,0.15);
+        }
+
+        .card-img {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+            background-color: #cbdde9;
+        }
+
+        .card-content {
+            padding: 24px 24px 28px;
+        }
+
+        .card-category {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #f9c74f;
+            font-weight: 600;
+        }
+
+        .card-content h3 {
+            font-size: 1.4rem;
+            margin: 12px 0;
+            font-weight: 600;
+        }
+
+        .card-content p {
+            color: #4a5b6e;
+            margin-bottom: 20px;
+        }
+
+        .btn-soft {
+            display: inline-block;
+            background: #eef2f7;
+            padding: 8px 20px;
+            border-radius: 40px;
+            text-decoration: none;
+            color: #1f3b4c;
+            font-weight: 500;
+            transition: 0.2s;
+        }
+
+        .btn-soft:hover {
+            background: #f9c74f;
+            color: #0a1a2e;
+        }
+
+        /* contato form */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+        }
+
+        .contact-info i {
+            font-size: 1.6rem;
+            color: #f9c74f;
+            margin-right: 14px;
+            width: 32px;
+        }
+
+        .contact-info p {
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 14px 18px;
+            margin-bottom: 20px;
+            border: 1px solid #dce5ec;
+            border-radius: 24px;
+            font-family: inherit;
+            background: white;
+            transition: 0.2s;
+        }
+
+        .contact-form input:focus, .contact-form textarea:focus {
+            outline: none;
+            border-color: #f9c74f;
+            box-shadow: 0 0 0 3px rgba(249,199,79,0.2);
+        }
+
+        .btn-primary {
+            background: #0f2b3b;
+            color: white;
+            border: none;
+            padding: 12px 28px;
+            border-radius: 40px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .btn-primary:hover {
+            background: #f9c74f;
+            color: #0a1a2e;
+        }
+
+        footer {
+            background: #0a1a2e;
+            color: #bdd4e8;
+            padding: 48px 0 24px;
+            margin-top: 40px;
+        }
+
+        .footer-grid {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 32px;
+            margin-bottom: 40px;
+        }
+
+        .social-icons a {
+            color: #cfdfef;
+            margin-right: 24px;
+            font-size: 1.5rem;
+            transition: 0.2s;
+        }
+
+        .social-icons a:hover {
+            color: #f9c74f;
+        }
+
+        .copyright {
+            text-align: center;
+            font-size: 0.85rem;
+            border-top: 1px solid #1f3f55;
+            padding-top: 28px;
+        }
+
+        @media (max-width: 820px) {
+            .container {
+                padding: 0 24px;
+            }
+            .grid-2, .contact-grid {
+                grid-template-columns: 1fr;
+            }
+            .header-inner {
+                flex-direction: row;
+                flex-wrap: wrap;
+            }
+            .nav-links {
+                display: none;
+                width: 100%;
+                flex-direction: column;
+                background: #0a1a2e;
+                padding: 20px 0;
+                gap: 20px;
+                margin-top: 20px;
+            }
+            .nav-links.show {
+                display: flex;
+            }
+            .menu-toggle {
+                display: block;
+            }
+            .hero h1 {
+                font-size: 2.3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header class="site-header">
+    <div class="container header-inner">
+        <div class="logo">
+            <a href="index.html">Teoria do Direito <span>| @theoriadodireito</span></a>
+        </div>
+        <button class="menu-toggle" id="mobileMenuBtn"><i class="fas fa-bars"></i></button>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html" class="nav-link active">Início</a></li>
+            <li><a href="sobre.html" class="nav-link">Sobre</a></li>
+            <li><a href="artigos.html" class="nav-link">Artigos</a></li>
+            <li><a href="contato.html" class="nav-link">Contato</a></li>
+        </ul>
+    </div>
+</header>
+
+<main>
+    <!-- HERO INÍCIO -->
+    <section class="hero">
+        <div class="container">
+            <h1>TEORIA DO DIREITO</h1>
+            <p>Teoria aplicada à prática • Acompanhe nosso trabalho no Instagram @theoriadodireito</p>
+        </div>
+    </section>
+
+    <!-- DESTAQUES / BOAS-VINDAS -->
+    <section class="section">
+        <div class="container">
+            <div class="grid-2">
+                <div>
+                    <h2 class="section-title">Domine a teoria com propósito</h2>
+                    <p>O perfil <strong>@theoriadodireito</strong> nasceu para oferecer materiais jurídicos de alto nível: resumos esquematizados, jurisprudência comentada e análises doutrinárias. Se você estuda para concursos, OAB ou busca aperfeiçoamento, aqui a teoria ganha vida.</p>
+                    <p>No nosso site você encontra artigos semanais, revisões de institutos essenciais e conteúdos exclusivos que extrapolam o feed do Instagram. Transforme seu estudo com clareza e profundidade.</p>
+                    <a href="sobre.html" class="btn-soft" style="margin-top: 16px; display: inline-block;">+ sobre o projeto</a>
+                </div>
+                <div class="highlight-stats">
+                    <div class="stat-item"><h3>+15k</h3><p>seguidores no IG</p></div>
+                    <div class="stat-item"><h3>200+</h3><p>posts jurídicos</p></div>
+                    <div class="stat-item"><h3>25 anos</h3><p>conteúdo contínuo</p></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ÚLTIMOS ARTIGOS (prévia) -->
+    <section class="section" style="background: #f9fafc;">
+        <div class="container">
+            <h2 class="section-title">Últimos conteúdos</h2>
+            <div class="posts-grid" id="previewPosts">
+                <!-- os cards serão preenchidos via JS com dados reais replicando estilo Instagram -->
+            </div>
+            <div style="text-align: center; margin-top: 48px;">
+                <a href="artigos.html" class="btn-primary">Ver todos os artigos →</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- CITAÇÃO / DIFERENCIAL -->
+    <section class="section">
+        <div class="container" style="text-align: center; max-width: 800px;">
+            <i class="fas fa-gavel" style="font-size: 2.8rem; color: #f9c74f; margin-bottom: 20px; display: inline-block;"></i>
+            <h2 style="font-size: 1.8rem; margin-bottom: 16px;">"Na prática, a teoria é essencial."</h2>
+            <p style="font-size: 1.1rem;">Prepare-se com quem entende a verdadeira estrutura do direito: teoria sólida + aplicação estratégica para provas e advocacia.</p>
+            <div style="margin-top: 28px;">
+                <a href="https://www.instagram.com/theoriadodireito/" target="_blank" rel="noopener" class="btn-soft"><i class="fab fa-instagram"></i> Siga no Instagram</a>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="container">
+        <div class="footer-grid">
+            <div>
+                <h4 style="color: white; margin-bottom: 16px;">Teoria do Direito</h4>
+                <p>Estudo jurídico inteligente · Doutrina, jurisprudência e mapas mentais.</p>
+            </div>
+            <div class="social-icons">
+                <a href="https://www.instagram.com/theoriadodireito/" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2026 Teoria do Direito · Todos os direitos reservados · desenvolvido para @theoriadodireito
+        </div>
+    </div>
+</footer>
+
+<script>
+    // dados simulados a partir do perfil (conteúdo original extraído da análise do instagram theoriadodireito)
+    const postsData = [
+        {
+            title: "Teoria Tridimensional de Miguel Reale",
+            category: "FILOSOFIA DO DIREITO",
+            excerpt: "Fato, valor e norma: a base da compreensão jurídica contemporânea. Entenda como aplicar nas questões da OAB.",
+            bgImage: "linear-gradient(135deg, #153e54, #08212f)",
+            link: "#"
+        },
+        {
+            title: "Princípio da proibição do retrocesso social",
+            category: "DIREITOS FUNDAMENTAIS",
+            excerpt: "O STF tem aplicado esse princípio em temas como saúde e previdência. Análise completa com julgados recentes.",
+            bgImage: "linear-gradient(135deg, #255c6e, #0f3642)",
+            link: "#"
+        },
+        {
+            title: "Métodos de interpretação constitucional",
+            category: "HERMENÊUTICA",
+            excerpt: "Princípios da unidade da constituição, concordância prática e efetividade. Resumo esquematizado.",
+            bgImage: "linear-gradient(135deg, #3b5e6b, #1e3e4a)",
+            link: "#"
+        },
+        {
+            title: "Responsabilidade civil do Estado",
+            category: "DIREITO ADMINISTRATIVO",
+            excerpt: "Teoria subjetiva e objetiva, teorias do risco administrativo e risco integral. Casos práticos de dano.",
+            bgImage: "linear-gradient(135deg, #2f5e6b, #144954)",
+            link: "#"
+        }
+    ];
+
+    function renderPreviewPosts() {
+        const container = document.getElementById('previewPosts');
+        if(!container) return;
+        container.innerHTML = '';
+        postsData.forEach(post => {
+            const card = document.createElement('div');
+            card.className = 'post-card';
+            card.innerHTML = `
+                <div class="card-img" style="background-image: ${post.bgImage}; background-size: cover; position: relative;">
+                    <div style="height: 100%; background: rgba(0,0,0,0.1);"></div>
+                </div>
+                <div class="card-content">
+                    <div class="card-category">${post.category}</div>
+                    <h3>${post.title}</h3>
+                    <p>${post.excerpt}</p>
+                    <a href="${post.link}" class="btn-soft">Ler mais <i class="fas fa-arrow-right"></i></a>
+                </div>
+            `;
+            container.appendChild(card);
+        });
+    }
+    renderPreviewPosts();
+
+    // mobile menu
+    const btn = document.getElementById('mobileMenuBtn');
+    const nav = document.getElementById('navLinks');
+    if(btn && nav) {
+        btn.addEventListener('click', () => {
+            nav.classList.toggle('show');
+        });
+    }
+
+    // highlight active page on nav (simplified)
+    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+    document.querySelectorAll('.nav-link').forEach(link => {
+        if(link.getAttribute('href') === currentPage) {
+            link.classList.add('active');
+        } else if(currentPage === '' && link.getAttribute('href') === 'index.html') {
+            link.classList.add('active');
+        }
+    });
+</script>
+
+<!-- PÁGINA SOBRE -->
+<!-- 
+    Esta página deve ser salva como "sobre.html"
+-->
+
+</body>
+</html>
