@@ -1,6 +1,14 @@
 # ⚖️ Grupo de Pesquisa Teoria do Direito (UNISINOS / CNPq)
 
 <p align="center">
+  <b>Idiomas:</b><br>
+  Acesse em outros idiomas: 
+  <a href="README.md">🇧🇷 Português</a> | 
+  <a href="README.en.md">🇺🇸 English</a> | 
+  <a href="README.es.md">🇪🇸 Español</a>
+</p>
+
+<p align="center">
   <img src="https://img.shields.io/badge/Status-Em_Desenvolvimento-blue?style=for-the-badge" alt="Status">
   <img src="https://img.shields.io/badge/Ambiente-GitHub_Pages-orange?style=for-the-badge" alt="GitHub Pages">
   <img src="https://img.shields.io/badge/Fundação-Agosto_1996-purple?style=for-the-badge" alt="Fundação">
@@ -14,11 +22,28 @@
 
 O projeto está sendo construído com foco em usabilidade, elegância e acessibilidade. Atualmente, contamos com três abordagens de interface em desenvolvimento para avaliação do grupo:
 
-| Protótipo | Proposta Visual | Link para Acesso |
-| :---: | :--- | :--- |
-| **Modelo 1** | Layout Tradicional e Institucional | [🎨 Visualizar Modelo 1](https://fabiowlademir.github.io/teoriadodireito/) |
-| **Modelo 2** | Abordagem Fluida e Moderna | [🎨 Visualizar Modelo 2](https://fabiowlademir.github.io/teoriadodireito/site2.html) |
-| **Modelo 3** | Design Refinado e Focado em Leitura | [🎨 Visualizar Modelo 3](https://fabiowlademir.github.io/teoriadodireito/site3.html) |
+<table>
+  <tr>
+    <th>Protótipo</th>
+    <th>Proposta Visual</th>
+    <th>Link para Acesso</th>
+  </tr>
+  <tr>
+    <td><b>Modelo 1</b></td>
+    <td>Layout Tradicional e Institucional</td>
+    <td><a href="https://fabiowlademir.github.io/teoriadodireito/" target="_blank">🎨 Visualizar Modelo 1</a></td>
+  </tr>
+  <tr>
+    <td><b>Modelo 2</b></td>
+    <td>Abordagem Fluida e Moderna</td>
+    <td><a href="https://fabiowlademir.github.io/teoriadodireito/site2.html" target="_blank">🎨 Visualizar Modelo 2</a></td>
+  </tr>
+  <tr>
+    <td><b>Modelo 3</b></td>
+    <td>Design Refinado e Focado em Leitura</td>
+    <td><a href="https://fabiowlademir.github.io/teoriadodireito/site3.html" target="_blank">🎨 Visualizar Modelo 3</a></td>
+  </tr>
+</table>
 
 ---
 
@@ -80,6 +105,13 @@ Fique à vontade para acompanhar meus projetos, portfólios e canais de tecnolog
   <a href="https://f2suporte.blogspot.com/" target="_blank"><img src="https://img.shields.io/badge/Blogspot-FF5722?style=for-the-badge&logo=blogger&logoColor=white" alt="Blog"></a>
   <a href="https://www.facebook.com/fabiowlademirRS" target="_blank"><img src="https://img.shields.io/badge/Facebook-1877F2?style=for-the-badge&logo=facebook&logoColor=white" alt="Facebook"></a>
 </p>
+
+---
+
+## 📄 Licença
+
+* O código-fonte deste projeto está sob a licença [MIT](LICENSE).
+* Os textos, artigos e conteúdos acadêmicos do grupo estão protegidos sob a licença [Creative Commons Attribution 4.0 International (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/deed.pt_BR).
 
 ---
 
