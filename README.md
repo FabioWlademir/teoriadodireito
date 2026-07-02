@@ -1,5 +1,3 @@
-
-```markdown
 # ⚖️ Grupo de Pesquisa Teoria do Direito (UNISINOS / CNPq)
 
 <p align="center">
@@ -29,6 +27,7 @@ O projeto está sendo construído com foco em usabilidade, elegância e acessibi
 O grupo investiga as transformações ocorridas no Direito a partir das crises estruturais do Estado Contemporâneo e dos impactos da globalização. Utilizando uma abordagem transdisciplinar pautada na complexidade, os estudos reúnem a **Teoria dos Sistemas Sociais** (Niklas Luhmann) e a **Crítica Jurídica** (Luis Alberto Warat).
 
 ### 📌 Linhas de Investigação Ativas:
+
 1. **Sociedade, Novos Direitos e Transnacionalização:** Reflexões sobre direitos emergentes (Bioética, Meio Ambiente, Propriedade Intelectual e Direitos Humanos) sob a perspectiva da complexidade.
 2. **Constitucionalismo Intersistêmico:** Análise da insuficiência da Teoria Constitucional tradicional frente aos novos problemas alçados ao patamar da sociedade mundial.
 3. **Projeto COFECUB (Brasil / França):** Cooperação internacional que estuda o Estado Constitucional e os estados de emergência decorrentes de crises multissetoriais e sindemias.
@@ -38,29 +37,33 @@ O grupo investiga as transformações ocorridas no Direito a partir das crises e
 ## 👥 Corpo Docente, Gestão e Desenvolvimento
 
 ### 🏛️ Liderança Acadêmica
-*   **Prof. Dr. Leonel Severo Rocha** (Coordenador)
-    *   *Bolsista de Produtividade em Pesquisa do CNPq - Nível 1B*
-    *   Doutor pela *École des Hautes Études en Sciences Sociales de Paris* (EHESS). Pós-doutor pela *Università degli Studi de Lecce* (Itália). Vice-Presidente Sul do CONPEDI e Professor Titular da UNISINOS e URI. Já orientou mais de 200 dissertações e teses.
-    *   📥 [Currículo Lattes](http://lattes.cnpq.br/3283434447576859) | 🆔 [ORCID](https://orcid.org/0000-0002-6971-1412)
+
+* **Prof. Dr. Leonel Severo Rocha** (Coordenador)
+  * *Bolsista de Produtividade em Pesquisa do CNPq - Nível 1B*
+  * Doutor pela *École des Hautes Études en Sciences Sociales de Paris* (EHESS). Pós-doutor pela *Università degli Studi de Lecce* (Itália). Vice-Presidente Sul do CONPEDI e Professor Titular da UNISINOS e URI. Já orientou mais de 200 dissertações e teses.
+  * 📥 [Currículo Lattes](http://lattes.cnpq.br/3283434447576859) | 🆔 [ORCID](https://orcid.org/0000-0002-6971-1412)
 
 ### 💼 Gerência do Grupo
-*   **Esdras Barbosa** (Gerente Administrativo)
-    *   Advogado e Mestrando em Direito Público pelo PPGD/Unisinos (Bolsista CAPES/PROEX). Bacharel pelo Centro Universitário Adventista do Nordeste (UNIAENE).
-    *   ✉️ esdrasbarbosaadv@gmail.com | 🆔 [ORCID](https://orcid.org/0000-0003-0337-5492)
+
+* **Esdras Barbosa** (Gerente Administrativo)
+  * Advogado e Mestrando em Direito Público pelo PPGD/Unisinos (Bolsista CAPES/PROEX). Bacharel pelo Centro Universitário Adventista do Nordeste (UNIAENE).
+  * ✉️ esdrasbarbosaadv@gmail.com | 🆔 [ORCID](https://orcid.org/0000-0003-0337-5492)
 
 ### 💻 Engenharia de Software & Web Design
-*   **Fábio Wlademir** (Desenvolvedor)
-    *   Membro pesquisador do grupo e Graduando em Direito pela UNISINOS (São Leopoldo/RS). Secretário de Inovação e Tecnologia do CAED/UNISINOS. Atua profissionalmente como Analista de Suporte em TI (NOC/SOC) e Web Designer, unindo o ecossistema da tecnologia com a ciência do Direito.
-    *   ✉️ fabiowlademirrs@gmail.com | 🆔 [ORCID](https://orcid.org/0009-0009-4170-0613)
+
+* **Fábio Wlademir** (Desenvolvedor)
+  * Membro pesquisador do grupo e Graduando em Direito pela UNISINOS (São Leopoldo/RS). Secretário de Inovação e Tecnologia do CAED/UNISINOS. Atua profissionalmente como Analista de Suporte em TI (NOC/SOC) e Web Designer, unindo o ecossistema da tecnologia com a ciência do Direito.
+  * ✉️ fabiowlademirrs@gmail.com | 🆔 [ORCID](https://orcid.org/0009-0009-4170-0613)
 
 ---
 
 ## 🛠️ Stack Tecnológica
 
 O portal é desenvolvido com foco em desempenho puro, utilizando padrões modernos da Web:
-*   **HTML5 Semântico:** Para garantir a correta indexação de artigos, linhas de pesquisa e documentos científicos.
-*   **CSS3 Avançado:** Layouts responsivos criados sob medida para visualização em computadores, tablets e smartphones.
-*   **GitHub Pages:** Infraestrutura automatizada de deploy para as versões de homologação.
+
+* **HTML5 Semântico:** Para garantir a correta indexação de artigos, linhas de pesquisa e documentos científicos.
+* **CSS3 Avançado:** Layouts responsivos criados sob medida para visualização em computadores, tablets e smartphones.
+* **GitHub Pages:** Infraestrutura automatizada de deploy para as versões de homologação.
 
 ---
 
@@ -79,8 +82,7 @@ Fique à vontade para acompanhar meus projetos, portfólios e canais de tecnolog
 </p>
 
 ---
+
 <p align="center">
   Construído com dedicação científica e tecnológica para registrar os 30 anos de história do Grupo Teoria do Direito.
 </p>
-
-```
