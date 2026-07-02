@@ -1,6 +1,3 @@
-Aqui está uma nova versão do `README.md` totalmente reformulada e personalizada. Utilizei a estrutura visual dinâmica e profissional que você gostou no seu projeto `for-attorney-legal-software`, trazendo o espírito comemorativo dos **30 anos do Grupo Teoria do Direito (1996 - 2026)** para o topo do repositório.
-
-Você pode copiar o código abaixo diretamente para o arquivo principal do seu repositório:
 
 ```markdown
 # ⚖️ Grupo de Pesquisa Teoria do Direito (UNISINOS / CNPq)
