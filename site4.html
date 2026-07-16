@@ -3,103 +3,109 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Teoria do Direito | Estudos Acadêmicos</title>
+    <title>Teoria do Direito</title>
     <style>
-        /* Reset e base */
-        * { box-sizing: border-box; margin: 0; padding: 0; }
+        :root {
+            --bg-color: #ffffff;
+            --text-main: #1a1a1a;
+            --text-muted: #666666;
+            --accent: #000000;
+            --border: #eaeaea;
+        }
+
         body {
-            font-family: 'Georgia', 'Times New Roman', serif;
-            line-height: 1.7;
-            color: #333;
-            background-color: #fdfbf7; /* Tom de papel leve */
-            padding: 40px 20px;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            margin: 0;
+            display: flex;
+            justify-content: center;
         }
 
-        /* Estrutura central */
-        .container {
-            max-width: 650px;
-            margin: 0 auto;
+        .wrapper {
+            display: grid;
+            grid-template-columns: 250px 1fr;
+            gap: 60px;
+            max-width: 900px;
+            width: 100%;
+            padding: 80px 40px;
         }
 
-        /* Tipografia */
-        h1, h2, h3 {
-            font-family: 'Helvetica Neue', Arial, sans-serif;
-            color: #1a1a1a;
-            margin: 1.5em 0 0.5em;
-            line-height: 1.2;
+        /* Coluna Esquerda: Identidade */
+        aside {
+            position: sticky;
+            top: 80px;
+            height: fit-content;
         }
-        h1 { font-size: 2.2rem; }
-        
-        /* Menu */
-        nav {
-            border-bottom: 1px solid #ddd;
-            padding-bottom: 20px;
-            margin-bottom: 40px;
-            text-transform: uppercase;
-            font-family: sans-serif;
-            font-size: 0.8rem;
-            letter-spacing: 1px;
+
+        .site-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            letter-spacing: -0.5px;
         }
+
+        nav ul { list-style: none; padding: 0; }
+        nav li { margin-bottom: 12px; }
         nav a {
-            color: #666;
             text-decoration: none;
-            margin-right: 20px;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            transition: color 0.2s;
         }
-        nav a:hover { color: #000; }
+        nav a:hover { color: var(--accent); }
 
-        /* Estilo do conteúdo */
-        p { margin-bottom: 1.5em; }
-        
-        .destaque {
-            background-color: #f0f0f0;
-            padding: 20px;
-            border-left: 4px solid #333;
-            font-style: italic;
-            margin: 2em 0;
+        /* Coluna Direita: Conteúdo */
+        main h1 {
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            letter-spacing: -1px;
         }
 
-        footer {
-            margin-top: 60px;
-            font-size: 0.8rem;
-            color: #888;
-            text-align: center;
+        .post-card {
+            margin-bottom: 50px;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 30px;
+        }
+
+        .post-card h2 { font-size: 1.4rem; margin-bottom: 10px; }
+        .post-card p { color: var(--text-muted); }
+
+        @media (max-width: 768px) {
+            .wrapper { grid-template-columns: 1fr; }
+            aside { position: relative; top: 0; margin-bottom: 40px; }
         }
     </style>
 </head>
 <body>
 
-<div class="container">
-    <nav>
-        <a href="#">Início</a>
-        <a href="#">Artigos</a>
-        <a href="#">Sobre</a>
-        <a href="#">Contato</a>
-    </nav>
-
-    <header>
-        <h1>Teoria do Direito</h1>
-        <p>Uma análise reflexiva sobre as estruturas, normas e fundamentos que regem o ordenamento jurídico contemporâneo.</p>
-    </header>
+<div class="wrapper">
+    <aside>
+        <div class="site-title">Teoria do Direito</div>
+        <nav>
+            <ul>
+                <li><a href="#">Artigos</a></li>
+                <li><a href="#">Notas de Aula</a></li>
+                <li><a href="#">Sobre o Autor</a></li>
+                <li><a href="#">Referências</a></li>
+            </ul>
+        </nav>
+    </aside>
 
     <main>
-        <h2>Introdução ao Estudo</h2>
-        <p>Este espaço é dedicado ao rigor acadêmico. A teoria do direito não deve ser apenas lida, mas interpretada através de um lente sóbria, desprovida de ruídos visuais, focada puramente no argumento.</p>
+        <h1>Ensaios sobre o Pensamento Jurídico</h1>
         
-        <div class="destaque">
-            "O direito é a busca constante pela justiça dentro de um sistema de normas que se pretende racional."
-        </div>
+        <article class="post-card">
+            <h2>A Norma Fundamental</h2>
+            <p>Uma análise detalhada sobre a estrutura kelseniana e sua relevância no cenário contemporâneo brasileiro...</p>
+        </article>
 
-        <h3>Tópicos Recentes</h3>
-        <ul>
-            <li><a href="#">Positivismo Jurídico e suas críticas</a></li>
-            <li><a href="#">A estrutura da norma segundo Kelsen</a></li>
-            <li><a href="#">Neoconstitucionalismo na América Latina</a></li>
-        </ul>
+        <article class="post-card">
+            <h2>Neoconstitucionalismo</h2>
+            <p>Reflexões sobre a eficácia dos direitos fundamentais e o papel do magistrado na concretização da norma...</p>
+        </article>
     </main>
-
-    <footer>
-        &copy; 2026 | Desenvolvido para o estudo da Teoria do Direito.
-    </footer>
 </div>
 
 </body>
