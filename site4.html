@@ -3,77 +3,119 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Teoria do Direito | Pesquisa e Estudo Acadêmico</title>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Inter:wght@300;400;600;700&display=swap">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
+  <title>Teoria do Direito | Grupo de Pesquisa CNPq – UNISINOS</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
     :root {
-      --primary-dark: #0b251e; /* Verde Petróleo */
-      --primary: #143d33;
-      --accent: #c5a880; /* Dourado */
-      --text-dark: #1e293b;
-      --bg-light: #f8fafc;
-      --border: #e2e8f0;
+      --rosa: #E83F6F; --verde: #2DAA7E; --azul: #2C7DA0;
+      --amarelo: #F9C74F; --preto: #1F2937; --cinza-claro: #F8F9FA;
     }
-
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: 'Inter', sans-serif; color: var(--text-dark); background: #ffffff; line-height: 1.7; }
+    body { font-family: 'Inter', sans-serif; background-color: #ffffff; color: var(--preto); line-height: 1.6; }
+    .container { max-width: 1280px; margin: 0 auto; padding: 0 32px; }
 
-    /* Header Estilo Profissional */
-    header { background: var(--primary-dark); color: white; padding: 20px 0; border-bottom: 3px solid var(--accent); }
-    .container { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
-    .brand { font-family: 'Cinzel', serif; font-size: 1.8rem; letter-spacing: 2px; }
-    
-    nav { margin-top: 15px; }
-    nav a { color: #cbd5e1; text-decoration: none; margin-right: 20px; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; }
-    nav a:hover { color: var(--accent); }
+    /* Header */
+    .site-header { background: #fff; position: sticky; top: 0; z-index: 1000; border-bottom: 3px solid transparent; border-image: linear-gradient(90deg, var(--rosa), var(--verde), var(--amarelo), var(--azul)) 1; }
+    .header-inner { display: flex; align-items: center; justify-content: space-between; padding: 16px 0; }
+    .logo { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 700; color: var(--preto); }
+    .nav-links { display: flex; gap: 30px; list-style: none; }
+    .nav-links a { text-decoration: none; color: var(--preto); font-weight: 500; }
 
-    /* Seções Estilo Acadêmico */
-    section { padding: 60px 0; }
-    h2 { font-family: 'Cinzel', serif; color: var(--primary-dark); margin-bottom: 30px; border-left: 4px solid var(--accent); padding-left: 15px; }
+    /* Hero */
+    .hero { background: linear-gradient(135deg, #ffffff 0%, #FEF9F0 100%); padding: 80px 0; text-align: center; border-bottom: 1px solid #eaecee; }
+    .hero h1 { font-size: 3rem; font-family: 'Cormorant Garamond', serif; margin-bottom: 20px; }
+    .highlight { color: var(--rosa); border-bottom: 3px solid var(--amarelo); }
+
+    /* Seções */
+    .section { padding: 80px 0; }
+    .section-title { font-size: 2.2rem; font-family: 'Cormorant Garamond', serif; margin-bottom: 48px; }
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; }
+    .about-card { background: white; padding: 32px; border-radius: 28px; border: 1px solid #eaecee; box-shadow: 0 8px 24px rgba(0,0,0,0.04); }
     
-    /* Cards de Conteúdo (Baseado no layout de advocacia) */
-    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
-    .card { background: white; border: 1px solid var(--border); padding: 30px; border-radius: 4px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
-    .card h3 { color: var(--primary); margin-bottom: 10px; font-family: 'Cinzel', serif; }
-    
-    footer { background: var(--primary-dark); color: #94a3b8; padding: 40px 0; text-align: center; font-size: 0.8rem; border-top: 4px solid var(--accent); }
+    /* Cards Artigos */
+    .posts-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 32px; }
+    .post-card { background: white; padding: 24px; border-radius: 28px; border: 1px solid #eaecee; transition: 0.2s; }
+    .post-card:hover { border-color: var(--rosa); transform: translateY(-5px); }
+
+    /* Footer */
+    footer { background: #1a2a36; color: #cddfe7; padding: 48px 0; margin-top: 40px; text-align: center; }
+
+    @media (max-width: 880px) { .grid-2 { grid-template-columns: 1fr; } .nav-links { display: none; } }
   </style>
 </head>
 <body>
 
-  <header>
-    <div class="container">
-      <div class="brand">Teoria do Direito</div>
-      <nav>
-        <a href="#">Início</a>
-        <a href="#">Artigos</a>
-        <a href="#">Resumos</a>
-        <a href="#">Referências</a>
-      </nav>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="logo">TEORIA DO DIREITO</div>
+      <ul class="nav-links">
+        <li><a href="#inicio">Início</a></li>
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#artigos">Artigos</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
     </div>
   </header>
 
-  <section class="container">
-    <h2>Fundamentos Teóricos</h2>
-    <div class="grid">
-      <article class="card">
-        <h3>Positivismo Jurídico</h3>
-        <p>Análise da norma como fato social e a separação entre moral e direito na dogmática contemporânea.</p>
-      </article>
-      <article class="card">
-        <h3>Teoria da Justiça</h3>
-        <p>Discussão sobre a equidade e os critérios de validade normativa no Estado Democrático de Direito.</p>
-      </article>
-    </div>
-  </section>
+  <main>
+    <section id="inicio" class="hero">
+      <div class="container">
+        <h1>Teoria do Direito: <br> <span class="highlight">pesquisa crítica</span> e inovação</h1>
+        <p>Grupo de Pesquisa certificado pelo CNPq (PPGD/UNISINOS). Liderado pelo Prof. Dr. Leonel Severo Rocha.</p>
+      </div>
+    </section>
+
+    <section id="sobre" class="section">
+      <div class="container">
+        <h2 class="section-title">O Grupo de Pesquisa</h2>
+        <div class="grid-2">
+          <div class="about-card">
+            <h3>Quem somos</h3>
+            <p>Sediado no <strong>PPGDireito da UNISINOS (RS)</strong>, o grupo reúne pesquisadores comprometidos com a intersecção entre Filosofia do Direito, Teoria dos Sistemas Sociais e Hermenêutica Contemporânea, visando a análise da decisão judicial e da complexidade nas democracias latino-americanas.</p>
+          </div>
+          <div class="about-card">
+            <h3>Coordenação</h3>
+            <p><strong>Prof. Dr. Leonel Severo Rocha</strong><br>
+            Referência em Teoria do Direito e Sociologia Jurídica. Pós-doutor pela Universidade Humboldt.</p>
+            <p>Instagram acadêmico: <strong>@lsr92338</strong> • <strong>@theoriadodireito</strong></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="artigos" class="section" style="background: var(--cinza-claro);">
+      <div class="container">
+        <h2 class="section-title">Produção Acadêmica</h2>
+        <div class="posts-grid" id="articlesGrid"></div>
+      </div>
+    </section>
+  </main>
 
   <footer>
     <div class="container">
-      <p>&copy; 2026 | Projeto de Teoria do Direito | Desenvolvido com rigor acadêmico.</p>
+      <p>&copy; 2026 Grupo de Pesquisa Teoria do Direito (CNPq) · PPGDireito UNISINOS</p>
     </div>
   </footer>
 
+  <script>
+    const articlesData = [
+      { cat: "TEORIA DOS SISTEMAS", title: "Direito como sistema autopoiético", summary: "Análise a partir de Niklas Luhmann." },
+      { cat: "HERMENÊUTICA", title: "Decisão judicial e argumentação sistêmica", summary: "Limites da interpretação na pós-modernidade." },
+      { cat: "TECNOLOGIA", title: "Governança algorítmica e riscos", summary: "Regulação de IA e desafios jurídicos." },
+      { cat: "EPISTEMOLOGIA", title: "O realismo jurídico e a virada pragmática", summary: "Contribuições contemporâneas." }
+    ];
+
+    const grid = document.getElementById('articlesGrid');
+    articlesData.forEach(art => {
+      grid.innerHTML += `
+        <div class="post-card">
+          <small style="color:var(--verde); font-weight:700;">${art.cat}</small>
+          <h3>${art.title}</h3>
+          <p>${art.summary}</p>
+        </div>
+      `;
+    });
+  </script>
 </body>
 </html>
